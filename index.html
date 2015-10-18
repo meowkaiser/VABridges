@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="assets/css/creative.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$.getJSON("bridge-inspections.json", function(data) {
+
+	});
+$(document).ready(function(){
+	
+	
+    $("button").click(function(){
+    	$.getJSON("bridge-inspections.json", function(results) {
+            $.each(results, function(index) {
+            	<!-- Year Recnst (Fed), District, Avg Daily Traffic, VA Struc No., Type, Route Name, Super Cond, Last Inspected, Dual Sign - Combination Unit Vehicle - Posted Capacity (in tons), NBD, Fed Struc Id,  Dual Sign - Single Unit Vehicle - Posted Capacity (in tons), Sub Cond, Road System, Structure Width (FT), Suffic Rating,Route, Single Sign - Single Unit Vehicle - Posted Capacity (in tons), Health Index, Year Built, Responsibility, Func Obslt, Struc Defic,Crossing, Structure Length (FT), Year Recnst (State), Jurisdiction, Weight Posting Status, Report Date, Culvert Cond, Deck Cond -->
+                var tbl=$("<table/>").attr("id","mytable");
+                $("#div1").append(tbl);
+                    var tr="<tr>";
+                    var td1="<td>"+results[index]["Year Recnst (Fed)"]+"</td>";
+                    var td2="<td>"+results[index]["District"]+"</td>";
+                    var td3="<td>"+results[index]["Avg Daily Traffic"]+"</td>";
+                    var td4="<td>"+results[index]["VA Struc No."]+"</td>";
+                    var td5="<td>"+results[index]["Type"]+"</td>";
+                    var td6="<td>"+results[index]["Route Name"]+"</td>";
+                    var td7="<td>"+results[index]["Super Cond"]+"</td>";
+                    var td8="<td>"+results[index]["Last Inspected"]+"</td>";
+                    var td9="<td>"+results[index]["Dual Sign - Combination Unit Vehicle - Posted Capacity (in tons)"]+"</td>";
+                    var td10="<td>"+results[index]["NBI"]+"</td>";
+                    var td11="<td>"+results[index]["Fed Struc Id"]+"</td>";
+                    var td12="<td>"+results[index]["Dual Sign - Single Unit Vehicle - Posted Capacity (in tons)"]+"</td>";
+                    var td13="<td>"+results[index]["Sub Cond"]+"</td>";
+                    var td14="<td>"+results[index]["Road System"]+"</td>";
+                    var td15="<td>"+results[index]["Structure Width (FT)"]+"</td>";
+                    var td16="<td>"+results[index]["Suffic Rating"]+"</td>";
+                    var td17="<td>"+results[index]["Route"]+"</td>";
+                    var td18="<td>"+results[index]["Single Sign - Single Unit Vehicle - Posted Capacity (in tons)"]+"</td>";
+                    var td19="<td>"+results[index]["Health Index"]+"</td>";
+                    var td20="<td>"+results[index]["Year Built"]+"</td>";
+                    var td21="<td>"+results[index]["Responsibility"]+"</td>";
+                    var td22="<td>"+results[index]["Func Obslt"]+"</td>";
+                    var td23="<td>"+results[index]["Struc Defic"]+"</td>";
+                    var td24="<td>"+results[index]["Crossing"]+"</td>";
+                    var td25="<td>"+results[index]["Structure Length (FT)"]+"</td>";
+                    var td26="<td>"+results[index]["Year Recnst (State)"]+"</td>";
+                    var td27="<td>"+results[index]["Jurisdiction"]+"</td>";
+                    var td28="<td>"+results[index]["Weight Posting Status"]+"</td>";
+                    var td29="<td>"+results[index]["Report Date"]+"</td>";
+                    var td30="<td>"+results[index]["Culvert Cond"]+"</td>";
+                    var td31="<td>"+results[index]["Deck Cond"]+"</td>";
+                   $("#mytable").append(tr+td1+td2+td3+td4+td5+td6+td7+td8+td9+td10+td11+td12+td13+td14+td15+td16+td17+td18+td19+td20+td21+td22+td23+td24+td25+td26+td27+td28+td29+td30+td31); 
+
+                
+            	
+            });
+        
+        });
+    });
+});
+</script>
+</head>
+<body>
+<table id="mytable" class="table table-condensed navbar-default" border = "black">
+    <tr>
+        <th>Year Recnst (Fed)</th>
+        <th>District</th>
+		<th>Avg Daily Traffic</th>
+		<th>VA Struc No.</th>
+		<th>Type</th>
+		<th>Route Name</th>
+		<th>Super Cond</th>
+		<th>Last Inspected</th>
+		<th>Dual Sign - Combination Unit Vehicle - Posted Capacity (in tons)</th>
+		<th>NBI</th>
+		<th>Fed Stuc Id</th>
+		<th>Dual Sign - Single Unit Vehicle - Posted Capacity (in tons)</th>
+		<th>Sub Cond</th>
+		<th>Road System</th>
+		<th>Structure Width (FT)</th>
+		<th>Suffic Rating</th>
+		<th>Route</th>
+		<th>Single Sign - Single Unit Vehicle - Posted Capacity (in tons)</th>
+		<th>Health Index</th>
+		<th>Year Built</th>
+		<th>Responsibility</th>
+		<th>Func Obslt</th>
+		<th>Struc Defic</th>
+		<th>Crossing</th>
+		<th>Structure Length(FT)</th>
+		<th>Year Recnst (State)</th>
+		<th>Jurisdiction</th>
+		<th>Weight Posting Status</th>
+		<th>Report Date</th>
+		<th>Culvert Cond</th>
+		<th>Deck Cond</th>
+	</tr>
+</table>
+<button>Get JSON data</button>
+
+<div></div>
+
+</body>
+</html>
